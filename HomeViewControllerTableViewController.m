@@ -8,6 +8,7 @@
 
 #import "HomeViewControllerTableViewController.h"
 #import "CityWeatherViewController.h"
+BOOL Ascending;
 
 @interface HomeViewControllerTableViewController ()
 
@@ -17,14 +18,24 @@
 @synthesize tableData,tableViewObject;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    tableData = [[NSMutableArray alloc] initWithObjects:@"London",@"Sheffield",@"Leeds",@"Manchester",nil];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.title = @"Weather Station";
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Descend" style:UIBarButtonItemStyleDone target:self action:@selector(reArrangeClicked:)];
+    self.navigationItem.rightBarButtonItem = anotherButton;
+    NSMutableArray *testCall = [[NSMutableArray alloc] initWithObjects:@"2638077",@"2643743",@"2644688",@"5089178",nil];
+    tableData = [FetchWeather fetchWeatherwithIDs:testCall];
+    Ascending=YES;
+    [tableData sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"temp" ascending:Ascending]]];
 }
-
+- (IBAction)reArrangeClicked:(id)sender {
+    Ascending=!Ascending;
+    if ([self.navigationItem.rightBarButtonItem.title isEqualToString:@"Ascend"])
+        self.navigationItem.rightBarButtonItem.title=@"Descend";
+    else
+        self.navigationItem.rightBarButtonItem.title=@"Ascend";
+    
+    [tableData sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"temp" ascending:Ascending]]];
+    [self.tableViewObject reloadData];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -54,9 +65,14 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
         
     }
+    City_BO *city= [[City_BO alloc] init];
+    city = [tableData objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
-    NSLog(@"%@",cell.textLabel.text);
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",city.name,city.temp];
+//    cell.detailTextLabel.text = city.temp;
+    NSString *ImageURL = city.currentWeatherIconURL;
+    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
+    cell.imageView.image = [UIImage imageWithData:imageData];
 //    cell.imageView.image = [UIImage imageNamed:@"geekPic.jpg"];
     
     return cell;
@@ -101,27 +117,13 @@
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:[NSString stringWithFormat:@"Selected Value is %@",[tableData objectAtIndex:indexPath.row]] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-//    
-//    [alertView show];
-//    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
-//    [self presentModalViewController:vc animated:YES];
-    
-
-//    CityWeatherViewController *detailViewController = [[CityWeatherViewController alloc] initWithNibName:@"CityWeatherViewController" bundle:nil];
-//    
-//    // Pass the selected object to the new view controller.
-//    
 //    // Push the view controller.
     CityWeatherViewController *vc = [[CityWeatherViewController alloc] initWithNibName:@"CityWeatherViewController" bundle:nil];
-    
-    NSString *abc=[NSString stringWithFormat:@"%@ ",[tableData objectAtIndex:indexPath.row]];
-    vc.myCityName=abc;
+    City_BO *city= [[City_BO alloc] init];
+    city = [tableData objectAtIndex:indexPath.row];
+    vc.myCityName=city.name;
     [self.navigationController pushViewController:vc animated:YES];
 }
-
 
 /*
 #pragma mark - Navigation

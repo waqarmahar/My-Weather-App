@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FetchWeather.h"
 @interface HomeViewControllerTableViewController : UITableViewController{
     
 }
 @property (strong, nonatomic) IBOutlet UITableView *tableViewObject;
 @property (nonatomic,strong) NSMutableArray *tableData;
+- (IBAction)reArrangeClicked:(id)sender ;
+
 @end

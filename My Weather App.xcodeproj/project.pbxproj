@@ -25,6 +25,8 @@
 		9AA6EC511AF6A934007E83F4 /* DAL.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA6EC501AF6A934007E83F4 /* DAL.m */; };
 		9AA6EC551AF6C134007E83F4 /* HomeViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA6EC531AF6C134007E83F4 /* HomeViewControllerTableViewController.m */; };
 		9AA6EC561AF6C134007E83F4 /* HomeViewControllerTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6EC541AF6C134007E83F4 /* HomeViewControllerTableViewController.xib */; };
+		9AF46E9B1AF796CC0028F1C5 /* arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF46E9A1AF796CC0028F1C5 /* arrow_up.png */; };
+		9AF46E9D1AF797E00028F1C5 /* images.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF46E9C1AF797E00028F1C5 /* images.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		9AA6EC521AF6C134007E83F4 /* HomeViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewControllerTableViewController.h; path = ../HomeViewControllerTableViewController.h; sourceTree = "<group>"; };
 		9AA6EC531AF6C134007E83F4 /* HomeViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewControllerTableViewController.m; path = ../HomeViewControllerTableViewController.m; sourceTree = "<group>"; };
 		9AA6EC541AF6C134007E83F4 /* HomeViewControllerTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeViewControllerTableViewController.xib; path = ../HomeViewControllerTableViewController.xib; sourceTree = "<group>"; };
+		9AF46E9A1AF796CC0028F1C5 /* arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_up.png; sourceTree = "<group>"; };
+		9AF46E9C1AF797E00028F1C5 /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = images.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				9AA6EC531AF6C134007E83F4 /* HomeViewControllerTableViewController.m */,
 				9AA6EC541AF6C134007E83F4 /* HomeViewControllerTableViewController.xib */,
 				9A25F77B1AF15E870087BB67 /* Main.storyboard */,
+				9AF46E9C1AF797E00028F1C5 /* images.png */,
+				9AF46E9A1AF796CC0028F1C5 /* arrow_up.png */,
 				9A25F77E1AF15E870087BB67 /* Images.xcassets */,
 				9A25F7801AF15E870087BB67 /* LaunchScreen.xib */,
 				9A25F7711AF15E870087BB67 /* Supporting Files */,
@@ -278,6 +284,8 @@
 				9A25F7821AF15E870087BB67 /* LaunchScreen.xib in Resources */,
 				9A25F7AC1AF29B9F0087BB67 /* CityWeatherViewController.xib in Resources */,
 				9A25F77F1AF15E870087BB67 /* Images.xcassets in Resources */,
+				9AF46E9D1AF797E00028F1C5 /* images.png in Resources */,
+				9AF46E9B1AF796CC0028F1C5 /* arrow_up.png in Resources */,
 				9AA6EC561AF6C134007E83F4 /* HomeViewControllerTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +440,7 @@
 				INFOPLIST_FILE = "My Weather App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -442,6 +451,7 @@
 				INFOPLIST_FILE = "My Weather App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

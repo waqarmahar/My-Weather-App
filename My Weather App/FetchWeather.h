@@ -18,4 +18,5 @@
 
 
 +(City_BO *) fetchWeatherForCity:(NSString *)cityName ;
++(NSMutableArray *) fetchWeatherwithIDs:(NSMutableArray *) cityIDs ;
 @end
