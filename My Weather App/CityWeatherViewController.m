@@ -16,7 +16,7 @@
 @end
 
 @implementation CityWeatherViewController
-@synthesize location,myCityName,cityName,temperature,temperatureRange,longittude,latitude,currentHumidity,currentWeather,atmosphericPressure;
+@synthesize location,myCityName,cityName,temperature,temperatureRange,longittude,latitude,currentHumidity,currentWeather,atmosphericPressure,weatherIcon;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,6 +33,8 @@
     location.text= [NSString stringWithFormat:@"%@",city.location];
     longittude.text=[NSString stringWithFormat:@"%@ %@",longittude.text,city.longitude];
     latitude.text=[NSString stringWithFormat:@"%@ %@",latitude.text,city.latitude];
+    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:city.currentWeatherIconURL]];
+    weatherIcon.image = [UIImage imageWithData:imageData];
     
     
     

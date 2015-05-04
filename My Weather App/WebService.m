@@ -1,7 +1,6 @@
 //
 //  WebService.m
 //  ARC enabled
-//  Created by Hooman Ahmadi on 12/27/11.
 /****************************************************************************************************************************
  For any class using a WebService object for asynchronous calls...
  
@@ -90,10 +89,6 @@
     
     //Create an NSURLRequest using the url domain and path. 
     NSURL *url = [NSURL URLWithString:[domain stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    
-    NSLog(@"%@",domain);
-    NSLog(@"%@",urlPath);
-    NSLog(@"%@",url);
     
     NSURLRequest *req = [NSURLRequest requestWithURL:
                              url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];

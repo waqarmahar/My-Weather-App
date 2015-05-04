@@ -15,15 +15,7 @@
     NSString *urlPath = [NSString stringWithFormat:@"weather?q=%@",cityName];
     NSMutableString *domain = [[NSMutableString alloc] initWithString:baseurl];
     [domain appendString:urlPath];
-    NSLog(domain);
-    //@"http://api.openweathermap.org/data/2.5/weather?q=Sheffield,uk";
-    
-    
-
      NSDictionary *fetchedData= [DAL fetchWeatherForCity:domain];
-    
-    
-    
         for(id key in fetchedData) {
     
             id value = [fetchedData objectForKey:key];
@@ -55,6 +47,10 @@
     NSLog(@"atmosphericPressure: %@", city.atmosphericPressure);
     city.currentWeather=[[[fetchedData objectForKey:@"weather"] objectAtIndex:0] objectForKey:@"main"];
     NSLog(@"currentWeather: %@", city.currentWeather);
+//    WeatherIconURL link
+    NSString *iconID=[[[fetchedData objectForKey:@"weather"] objectAtIndex:0] objectForKey:@"icon"];
+    city.currentWeatherIconURL=[NSString stringWithFormat:@"http://openweathermap.org/img/w/%@.png",iconID];
+    NSLog(@"currentWeather: %@", city.currentWeatherIconURL);
 
     return city;
     

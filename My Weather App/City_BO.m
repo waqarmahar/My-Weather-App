@@ -9,5 +9,5 @@
 #import "City_BO.h"
 
 @implementation City_BO
-@synthesize name,location,latitude,longitude,temp,tempRange,currentHumidity,currentWeather,currentWeatherIcon,atmosphericPressure;
+@synthesize name,location,latitude,longitude,temp,tempRange,currentHumidity,currentWeather,currentWeatherIconURL,atmosphericPressure;
 @end

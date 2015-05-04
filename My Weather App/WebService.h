@@ -1,7 +1,6 @@
 //
 //  WebService.h
 //  ARC enabled
-//  Created by Hooman Ahmadi on 12/27/11.
 /****************************************************************************************************************************
  For any class using a WebService object for asynchronous calls...
  

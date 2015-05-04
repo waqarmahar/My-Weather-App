@@ -13,6 +13,7 @@
 @interface CityWeatherViewController : UIViewController{
     
 }
+@property (weak, nonatomic) IBOutlet UIImageView *weatherIcon;
 @property (weak, nonatomic) IBOutlet UILabel *location;
 @property (weak, nonatomic) NSString *myCityName;
 @property (weak, nonatomic) IBOutlet UILabel *cityName;

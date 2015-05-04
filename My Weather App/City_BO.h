@@ -15,7 +15,7 @@
     NSString *latitude;
     NSString *longitude;
     NSString *currentWeather;
-    NSString *currentWeatherIcon;
+    NSString *currentWeatherIconURL;
     NSString *temp;
     NSString *tempRange;
     NSString *atmosphericPressure;
@@ -26,7 +26,7 @@
 @property (nonatomic,readwrite)NSString	*latitude;
 @property (nonatomic,readwrite)NSString *longitude;
 @property (nonatomic,strong)NSString *currentWeather;
-@property (nonatomic,strong)NSString *currentWeatherIcon;
+@property (nonatomic,strong)NSString *currentWeatherIconURL;
 @property (nonatomic,strong)NSString *temp;
 @property (nonatomic,strong)NSString *tempRange;
 @property (nonatomic,strong)NSString *atmosphericPressure;
