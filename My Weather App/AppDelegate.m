@@ -17,6 +17,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+//    HomeViewControllerTableViewController *homeViewConroller = [[HomeViewControllerTableViewController alloc] init];
+//    
+//    self.window.rootViewController = homeViewConroller;
+//    return YES;
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    // Override point for customization after application launch.
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    [self.window makeKeyAndVisible];
+    HomeViewControllerTableViewController *homeViewConroller = [[HomeViewControllerTableViewController alloc] init];
+//    self.window.rootViewController = homeViewConroller;
+//    return YES;
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+//    self.viewController = [[HomeViewControllerTableViewController alloc] initWithNibName:@"HomeViewControllerTableViewController"
+//                                                           bundle:nil];
+    UINavigationController *navigation = [[UINavigationController alloc]initWithRootViewController:homeViewConroller];
+    self.window.rootViewController = navigation;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
